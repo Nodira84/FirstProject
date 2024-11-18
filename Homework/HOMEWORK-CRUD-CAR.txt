@@ -1,0 +1,154 @@
+namespace CRUDCarNumber
+{
+    internal class Program
+    {
+        public static List<string> CarNumbers = new List<string>();
+        public static void DataSeed()
+        {
+            CarNumbers.Add("01J646NB");
+            CarNumbers.Add("01F4DRNB");
+            CarNumbers.Add("01J371SO");
+            CarNumbers.Add("01K410ZA");
+            CarNumbers.Add("01L527MK");
+            CarNumbers.Add("01E123IR");
+        }
+        static void Main(string[] texts)
+        {
+            DataSeed();
+            StartFrontEnd();
+        }
+        public static void StartFrontEnd()
+        {
+            while (true)
+            {
+                Console.WriteLine("1. Add Car Number: ");
+                Console.WriteLine("2. Delete Car Number: ");
+                Console.WriteLine("1. Update Car Number: ");
+                Console.WriteLine("1. Read Car Numbers: ");
+                Console.Write("Choose: ");
+                var option = int.Parse(Console.ReadLine());
+
+                if (option == 1)
+                {
+                    Console.Write("Enter new number: ");
+                    var carNumber = Console.ReadLine();
+                    var index = AddNumbers(carNumber);
+                    if (index == -1)
+                    {
+                        Console.WriteLine("Nor added, error ");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Added, successed index : {index} ");
+                    }
+                }
+                else if (option == 2)
+                {
+                    Console.Write("Enter deleted number: ");
+                    var carNumber = Console.ReadLine();
+                    var boolResult = DeleteNumber(carNumber);
+                    if (boolResult == true)
+                    {
+                        Console.WriteLine("Deleted ");
+                    }
+                    else
+                    {
+                        {
+                            Console.WriteLine("Not deleted ");
+                        }
+                    }
+                }
+                else if (option == 3)
+                {
+                    Console.Write("Enter old number: ");
+                    var oldCarNumber = Console.ReadLine();
+                    Console.Write("Enrer updared number: ");
+                    var newCarNumber = Console.ReadLine();
+                    var boolResult = UpdateNumber(oldCarNumber, newCarNumber);
+                    if (boolResult == true)
+                    {
+                        Console.WriteLine("Updated, successed ");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not updated");
+                    }
+                }
+                else if (option == 4)
+                {
+                    var numbers = GetCarNumbers();
+                    foreach (var number in numbers)
+                    {
+                        Console.WriteLine(number);
+                    }
+                }
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+        public static int AddNumbers(string number)
+        {
+            var exists = CarNumbers.Contains(number);
+            var IsValidFormat = CheckNumberFormat(number);
+
+            if (exists is true || IsValidFormat is false)
+            {
+                return -1;
+            }
+            number = number.ToUpper();
+            CarNumbers.Add(number);
+
+            return CarNumbers.Count - 1;
+        }
+
+        public static bool CheckNumberFormat(string number)
+        {
+            var firstCheck = Char.IsDigit(number[0]);
+            var secondCheck = Char.IsDigit(number[1]);
+            var thirdCheck = Char.IsLetter(number[2]);
+
+            var fourthCheck = number.Length == 8;
+            var fifthCheck = true;
+
+            for (var i = 3; i < number.Length - 2; i++)
+            {
+                if (Char.IsDigit(number[i]) is false)
+                {
+                    fifthCheck = false;
+                    break;
+                }
+            }
+            return firstCheck && secondCheck && thirdCheck && fourthCheck && fifthCheck;
+        }
+
+        public static bool DeleteNumber(string number)
+        {
+            var exists = CarNumbers.Contains(number);
+            CarNumbers.Remove(number);
+            return exists;
+        }
+
+        public static bool UpdateNumber(string oldNumber, string newNumber)
+
+        {
+            var index = CarNumbers.IndexOf(oldNumber);
+            var boolResult = false;
+            var IsValidFormat = CheckNumberFormat(newNumber);
+            if (index < 0 || IsValidFormat is false)
+            {
+                return boolResult;
+            }
+            newNumber = newNumber.ToUpper();
+            CarNumbers[index] = newNumber;
+            boolResult = true;
+            return boolResult;
+
+        }
+        public static List<string> GetCarNumbers()
+
+        {
+            return CarNumbers;
+        }
+    }
+}
+
