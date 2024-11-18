@@ -1,0 +1,964 @@
+using System.Diagnostics.Metrics;
+using System.Diagnostics.Tracing;
+using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Liststask
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //task1 list<int> berilgan. shu listdagi 2 xonali elemetlarni sanab bering.
+            //Console.Write("Enter length: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+
+            //// LOGIC
+            //var counter = 0;
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (9 < numbers[i] && numbers[i] < 100)
+            //    {
+            //        counter++;
+            //    }
+
+            //}
+            //Console.Write(counter);
+
+
+            //task2 list<int> berilgan. shu listdagi toq va juft elementlarni taqqoslang. Agar juft ko'p bo'lsa "JUFT" aks holda "TOQ" deb chiqaring
+            //Console.Write("Enter length: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+
+            //// LOGIC
+            //var counterEven = 0;
+            //var counterOdd = 0;
+
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (numbers[i] % 2 == 0)
+            //    {
+            //        counterEven++;
+            //    }
+            //    else if (numbers[i] % 2 != 0)
+            //    {
+            //        counterOdd++;
+            //    }
+            //}
+            //if (counterEven > counterOdd)
+            //{
+            //    Console.Write("Juft");
+            //}
+            //else if (counterEven < counterOdd)
+            //{
+            //    Console.Write("Toq");
+            //}
+            //    if (counterEven == counterOdd)
+            //    {
+            //        Console.Write("Teng");
+            //    }
+
+            //task3 list<int> berilgan. agar shu listda hamma element toq bo'lsa true aks holda false chiqaring
+
+            // 1 metod
+            //Console.Write("Enter length: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+
+            //// LOGIC
+            //var counter = 0;
+
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (numbers[i] % 2 != 0)
+            //    {
+            //        counter++;
+            //    }
+            //}
+
+            //if (counter == length)
+            //{
+            //    Console.Write("True");
+            //}
+            //else
+            //{
+            //    Console.Write("False");
+            //}
+
+            // 2 metod 
+
+            //Console.Write("Enter length: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+
+            //// LOGIC
+            //var allOdd = true;
+
+            //foreach (int element in numbers)
+            //{
+            //    if (element % 2 == 0)
+            //    {
+            //        allOdd = false;
+            //        break;
+            //    }
+            //}
+            //Console.Write(allOdd);
+
+            //task 1 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan. 3 xonali elementlarini miqdorini toping.
+
+            //Console.Write("Enter length: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+            //var counter = 0;
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //foreach (int element in numbers)
+            //{
+            //    if (100 <= element && element <= 999)
+            //        counter++;
+            //}
+            //Console.Write(counter);
+
+            //task2 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan.Juft elementlarini miqdorini toping.
+
+            //Console.Write("Enter lenght: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var counter = 0;
+            //foreach (int element in numbers)
+            //{
+            //    if (element % 2 == 0)
+            //    {
+            //        counter++;
+            //    }
+            //}
+            //Console.Write(counter);
+
+            //task3 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan.Toq elementlarini yig‘indisini toping.
+
+            //Console.Write("Enter length: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var result = 0;
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (numbers[i] % 2 != 0)
+            //    {
+            //        result += numbers[i];
+            //    }
+            //}
+            //Console.Write("Result toq: " + result);
+
+            //task4 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan. 3 ga va 7 ga karrali elementlarini miqdorini toping.
+
+            //Console.Write("Enter length: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var counter = 0;
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (numbers[i] % 3 == 0 && numbers[i] % 7 == 0)
+            //    {
+            //        counter++;
+            //    }
+            //            }
+            //Console.Write(counter);
+
+            //task5 oson
+            // N ta elementdan iborat 1 o‘lchamli list berilgan. 2 xonali toq elementlarini miqdorini va yig‘indisini toping.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var counter = 0;
+            //var result = 0;
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (10 <= numbers[i] && numbers[i] <= 99 && numbers[i] % 2 !=0)
+            //    {
+            //        counter++;
+            //        result += numbers[i];
+            //    }
+            //}
+            //Console.WriteLine("Miqdori " + counter);
+            //Console.WriteLine("Yigindisi " + result);
+
+            //task6 oson
+            // N ta elementdan iborat 1 o‘lchamli list berilgan. 1 chi va oxirgi elementlarini almashtiring va ekranga listni chiqaring.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var lastindex = numbers[0];
+            //numbers[0] = numbers[numbers.Count - 1];
+            //numbers[numbers.Count - 1] = lastindex;
+
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    Console.Write($"{numbers[i]} ");
+            //}
+            //Console.WriteLine();
+
+            //task7 oson
+            // N ta elementdan iborat 1 o‘lchamli list berilgan.Dastlabki 3 ta elementini yig‘indisini toping.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var result = 0;
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    result += numbers[i];
+            //}
+            //Console.Write(result);
+
+            //task8 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan.Oxirgi 3 ta elementini yig‘indisi toping.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var result = 0;
+            //for (int i = length - 3; i < length; i++)
+            //{
+            //    result += numbers[i];
+            //}
+            //Console.Write(result);
+
+            //task9 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan. Toq elementlar bn Juft elementlarini taqqoslang.
+            //Agar toqlari ko‘p bo‘lsa true aks holda false chiqaring.
+
+            //Console.Write("Enter lenght: ");
+            //var lenght = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < lenght; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var allOdd = 0;
+            //var allEven = 0;
+
+            //foreach (int element in numbers)
+            //{
+            //    if (element % 2 == 0)
+            //    {
+            //        allEven++;
+            //    }
+            //    else if (element % 2 != 0)
+            //    {
+            //        allOdd++;
+            //    }
+            //    }
+            //if (allOdd > allEven)
+            //{
+            //    Console.Write(true);
+            //}
+            //else if (allEven > allOdd)
+            //{
+            //    Console.Write(false);
+            //}
+            //else 
+            //{
+            //    Console.Write("Ular teng");
+            //}
+
+            //task10 oson
+            // N ta elementdan iborat 1 o‘lchamli list berilgan. Juft elementlarini 3 barobarga oshiring.
+
+            //Console.Write("Enter lenght: ");
+            //var lenght = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < lenght; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (numbers[i] % 2 == 0)
+            //    {
+            //        numbers[i] = numbers[i] * 3;
+            //    }
+            // }
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    Console.Write($"{numbers[i]} ");
+            //}
+            //Console.WriteLine();
+
+            //task11 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan. Agar hamma elementi 5 ga karrali bo‘lsa true aks holda false chiqaring.
+
+            //Console.Write("Enter length: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}                      
+            //var allFive = false;
+            //foreach (int element in numbers)
+            //{
+            //    if (element % 5 == 0)
+            //    {
+            //        allFive = true;
+            //    }
+            //else
+            //    {
+            //        allFive = false;
+            //    }
+            //}
+            //Console.Write(allFive);
+
+            //task12 oson
+            // N ta elementdan iborat 1 o‘lchamli list berilgan. Agar dastlabki 3 ta elementi 2 xonali bo‘lsa true aks holda false chiqaring.
+
+            //Console.Write("Enter length: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var firstThree = false;
+
+            //    if (10 <= numbers[0] && numbers[0] <= 99 && 10 <= numbers[1] && numbers[1] <= 99 && 10 <= numbers[2] && numbers[2] <= 99)
+            //    {
+            //        firstThree = true;
+            //    }
+            //    else
+            //    {
+            //        firstThree = false;
+            //    }
+            // Console.Write(firstThree);
+
+            //task13 oson                
+            // N ta elementdan iborat 1 o‘lchamli list berilgan.
+            // Agar dastlabki 2 ta elementni juft va oxirgi 2 ta elementi toq bo‘lsa true aks holda false chiqaring
+
+            //Console.Write("Enter length: ");
+            //var lenght = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < lenght; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var firstTwo = (numbers[0] % 2 == 0 && numbers[1] % 2 == 0);
+            //var lastTwo = (numbers[numbers.Count - 1] % 2 != 0 && numbers[numbers.Count - 2] % 2 != 0);
+
+            //Console.WriteLine(firstTwo && lastTwo);
+
+            //task14 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan. Eng kichik elementini aniqlang.
+
+            //Console.Write("Enter length: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var minElement = numbers.Min();
+
+            //Console.Write(minElement);
+
+            //task15 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan.Eng katta va eng kichik elementini yig‘indisini aniqlang.
+
+            //Console.Write("Enter length: ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($"{i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var minElement = numbers.Min();
+            //var maxElement = numbers.Max(); 
+            //Console.Write(minElement + maxElement);
+
+            //task16 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan.Barcha 2 xonali elementlarni qiymatini 100 ga oshiring.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (10 <= numbers[i] && numbers[i] <= 99)
+            //    {
+            //    numbers[i] = numbers[i] + 100;
+            //    }Console.Write($" {numbers[i]}");
+            //}
+
+            //task17 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan.Musbat va Manfiy elementlarini miqdorini aniqlang.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var counterPositive = 0;
+            //var counterNegative = 0;
+
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (numbers[i] > 0)
+            //    {
+            //        counterPositive++;
+            //    }
+            //    else if (numbers[i] < 0)
+            //    {
+            //        counterNegative++;
+            //    }
+            // }
+            //Console.WriteLine("Manfiy sonlar: " + counterNegative);
+            //Console.WriteLine("Musbat sonlar: " + counterPositive);
+
+            //task18 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan.
+            //1 chi elementidan kichik bo‘lgan elementlarni miqdorini aniqlang.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+
+            //var counter = 0;
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (numbers[i] < numbers[0])
+            //    {
+            //        counter++;
+            //    }
+            // }
+            //Console.Write(counter);
+
+            //task19 oson
+            //N ta elementdan iborat 1 o‘lchamli list berilgan.
+            //Oxirgi elementida katta bo‘lgan elementlarni yig‘indisini aniqlang.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var result = 0;
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (numbers[numbers.Count-1] < numbers[i])
+            //    {
+            //        result = result + numbers[i];
+            //    }
+            //}
+            //Console.Write(result);
+
+            //task20 oson
+            // N ta elementdan iborat 1 o‘lchamli list berilgan.
+            // Agar barcha elementni 4 ga yoki 3 ga karrali bo‘lsa "hello" aks holda "salom" ni chiqaring.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var allFourandThree = true;
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    if (!(numbers[i] % 4== 0 || numbers[i] % 3 == 0)) 
+            //    {
+            //        allFourandThree = false;
+            //        break;
+            //    }
+            //}
+            //Console.WriteLine(allFourandThree ? "hello" : "salom");
+
+            // task21 qiyin
+            // N ta elementdan iborat 1 o‘lchamli list berilgan.
+            // Agar elementlari o‘suvchi bo‘lsa true aks holda false chiqaring.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var sortElement = true;
+            //for (int i = 0; i < numbers.Count-1; i++)
+            //{
+            //    if (numbers[i] >= numbers[i + 1])
+            //    {
+            //        sortElement = false;
+            //        break;
+            //    }
+            //}
+            //Console.WriteLine(sortElement ? "True" : "False");
+
+            //task22 qiyin
+            //N ta elementdan iborat 1 o‘lchamli list berilgan.
+            //Agar elementlari kamayuvchi bo‘lsa true aks holda false chiqaring.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var sortElement = true;
+            //for (int i = 0; i < numbers.Count - 1; i++)
+            //{
+            //    if (numbers[i] < numbers[i + 1])
+            //    {
+            //        sortElement = false;
+            //        break;
+            //    }
+            //}
+            //Console.WriteLine(sortElement ? "True" : "False");
+
+            //task23 qiyin
+            // N ta elementdan iborat 1 o‘lchamli list berilgan.
+            // Eng katta elementi bilan eng kichik elementini joyini almashtiring. Va listni chiqaring.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+
+            //var minElement = numbers.Min();
+            //var maxElement = numbers.Max();
+
+            //for ( var i = 0; i < numbers.Count; i++)
+            //{
+            //    if (numbers[i] == maxElement)
+            //    {
+            //        numbers[i] = minElement;
+            //    }
+            //    else if (numbers[i] == minElement)
+            //    {
+            //        numbers[i] = maxElement;
+            //    }
+            //    Console.Write($" {numbers[i]} ");
+            //}
+
+            //task24
+            //N ta elementdan iborat 1 o‘lchamli list berilgan.
+            //Elementlar yig‘indisini aniqlang
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var result = 0;
+            //for (var i = 0; i < numbers.Count; i++)
+            //{
+            //    result += numbers[i];
+            // }
+            //Console.Write(result);
+
+
+            //task25
+            //n ta elementdan tashkil topgan massiv berilgan. Massiv elementlari
+            //orasidan yig'indisi eng katta bo'ladigan 2 ta qo'shni elementni chiqaruvchi  programma tuzilsin.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var firstNeighbour = numbers[0];
+            //var secondNeighbour = numbers[1];
+
+            //for (var i = 2; i < numbers.Count; i++)
+            //{
+            //    if (numbers[i-1] + numbers[i] > numbers[0] + numbers[1])
+            //    {
+            //        {
+            //            firstNeighbour = numbers[i-1];
+            //            secondNeighbour = numbers[i];
+            //        }
+            //    }
+            //}
+            //Console.Write($"{firstNeighbour} : {secondNeighbour}");
+
+
+            //task26
+            //26. n ta elementdan tashkil topgan massiv berilgan. Massiv elementlari
+            //orasidan chap qo'shnisidan katta bo'lganlar sonini chiqaruvchi programma tuzilsin.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbers = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbers.Add(element);
+            //}
+            //var counter = 0;
+            //for (var i = 0; i < numbers.Count-1; i++)
+            //{
+            //    if (numbers[i] < numbers[i+1])
+            //    {
+            //            counter++;
+            //    }
+            //}
+            //Console.Write(counter);
+
+            // 2 variant
+
+            //    Console.Write("Enter lenght: ");
+            //    var lenght = int.Parse(Console.ReadLine());
+            //    var numbers = GetFilledList(lenght);
+            //    var counter = 0;
+            //    for (var i = 0; i < numbers.Count - 1; i++)
+            //    {
+            //        if (numbers[i] < numbers[i + 1])
+            //        {
+            //            counter++;
+            //        }
+            //    }
+            //    Console.WriteLine(counter);
+            //}
+
+            //    public static List<int>GetFilledList(int length)
+            //    {
+            //    var numbers = new List<int>();
+            //        for (var i = 0; i < length; i++)
+            //        { 
+            //        Console.Write($"{i}: ");
+            //            var element = int.Parse( Console.ReadLine() );
+            //            numbers.Add( element );
+            //        }
+            //        return numbers;
+            //    }
+
+            // 3 variant
+            //    Console.Write("Enter lenght: ");
+            //    var lenght = int.Parse(Console.ReadLine());
+            //    var numbers = GetFilledList(lenght);
+            //   var counter = CounterBiggerThanLeft(numbers);
+
+            //    Console.WriteLine(counter);
+            //}
+
+            //public static List<int> GetFilledList(int length)
+            //{
+            //    var numbers = new List<int>();
+            //    for (var i = 0; i < length; i++)
+            //    {
+            //        Console.Write($"{i}: ");
+            //        var element = int.Parse(Console.ReadLine());
+            //        numbers.Add(element);
+            //    }
+            //    return numbers;
+            //}
+
+            //public static int CounterBiggerThanLeft(List<int> numbers)
+            //{
+            //    var counter = 0;
+            //    for (var i = 0; i < numbers.Count - 1; i++)
+            //    {
+            //        if (numbers[i] < numbers[i + 1])
+            //        {
+            //            counter++;
+            //        }
+            //    }
+            //    return counter;
+            //}
+
+
+            //task27 27. n ta elementdan tashkil topgan 2 ta massiv berilgan.
+            //listni mos elementlar ko'paytmasidan tashkil topgan yangi list hosil qiling va ekranga chiqaring.
+
+            //Console.Write("Enter length ");
+            //var length = int.Parse(Console.ReadLine());
+            //var numbersOne = new List<int>();
+            //var numbersTwo = new List<int>();
+            //var numbersThree = new List<int>();
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbersOne.Add(element);
+            //}
+
+            //for (int i = 0; i < length; i++)
+            //{
+            //    Console.Write($" {i} : ");
+            //    var element = int.Parse(Console.ReadLine());
+            //    numbersTwo.Add(element);
+            //}
+
+            //for (var i = 0; i < length; i++)
+            //{
+            //    numbersThree.Add(numbersOne[i] * numbersTwo[i]);
+            //}
+
+            //for (var i = 0;i < numbersThree.Count; i++)
+            //{
+            //   Console.Write($" {numbersThree[i]} ");
+            //}
+
+            // 2 variant
+
+            //    Console.Write("Enter lenght: ");
+            //    var lenght = int.Parse(Console.ReadLine());
+            //    Console.Write("Enter first List: ");
+            //    var numbersOne = GetFilledList(lenght);
+            //    Console.Write("Enter second List: ");
+            //    var numbersTwo = GetFilledList(lenght);
+            //    var numbersThree = FirstMultiplySecond(numbersOne, numbersTwo);
+            //    Console.WriteLine("Third List: ");
+            //    for (var i = 0; i < numbersThree.Count; i++)
+            //    {
+            //        Console.Write($" {numbersThree[i]} ");
+            //    }
+            //}
+            //        public static List <int>FirstMultiplySecond(List<int> numbersOne, List<int> numbersTwo)
+            //    {
+
+            //        var numbersThree = new List<int>();
+            //        for (var i = 0; i < numbersOne.Count; i++)
+            //        {
+            //            numbersThree.Add(numbersOne[i] * numbersTwo[i]);
+            //        }
+            //        return numbersThree;
+            //    }
+
+            //    public static List <int>GetFilledList(int lenght)
+            //    {
+            //        var numbers = new List<int>();
+            //        for (var i = 0; i < lenght; i++)
+            //        {
+            //            Console.Write($"{i}: ");
+            //            var element = int.Parse(Console.ReadLine());
+            //            numbers.Add(element);
+            //        }
+            //        return numbers;
+            //    }
+
+            //task28
+            //n ta elementdan tashkil topgan string massiv berilgan.'$' bilan boshlanadigan elementlar miqdorini aniqlang.
+
+            //    Console.Write("Enter lenght: ");
+            //    var lenght = int.Parse(Console.ReadLine());
+            //    var words = new List<string>();
+            //    for (var i = 0; i < lenght; i++)
+            //    {
+            //        Console.Write($" {i}: ");
+            //        var element = Console.ReadLine();
+            //        words.Add(element);
+
+            //    }
+            //    var countWord = 0;
+            //    foreach (var word in words)
+            //    {
+            //        if (word.StartsWith("$") is true)
+            //            countWord++;
+            //    }
+            //    Console.WriteLine(countWord);
+            //}
+
+            // 2 variant
+
+            //    Console.Write("Enter lenght: ");
+            //    var lenght = int.Parse(Console.ReadLine());
+            //    var words = GetFilledList(lenght);
+            //    var countWord = StartDollar(words);
+            //    Console.WriteLine(countWord);
+            //}
+
+            //public static int StartDollar(List<string> words)
+            //{
+            //    var countWord = 0;
+            //    foreach (var word in words)
+            //    {
+            //        if (word.StartsWith("$") is true)
+            //        countWord++;
+            //    }
+            //    return countWord;
+            //}
+
+            //    public static List<string>GetFilledList(int lenght)
+            //    {
+            //    var words = new List<string>();
+            //        for (var i = 0; i < lenght; i++)
+            //        {
+            //            Console.Write($" {i}: ");
+            //            var element = Console.ReadLine();
+            //            words.Add(element);
+            //        }
+            //        return words;
+            //    }
+
+            }
+     
+        
+    }
+}
+
+
