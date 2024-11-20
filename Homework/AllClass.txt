@@ -1,0 +1,230 @@
+namespace AllClasses
+{
+    public class Restaurant
+    {
+        public string Name { get; set; }
+
+        public string Adress { get; set; }
+
+        public double Reyting { get; set; }
+
+        public string Menu { get; set; }
+
+        public string Delivery { get; set; }
+
+        public string OpeningHours { get; set; }
+
+        public string ClosingHours { get; set; }
+
+        public string Internetpages { get; set; }
+
+        public string Phone { get; set; }
+
+
+        public string Linktr { get; set; }
+
+
+        public void DisplayInfo()
+        {
+            string res = $" Name : {Name}, Linktr : {Linktr}, Adress : {Adress}, Reyting : {Reyting}";
+            Console.WriteLine(res);
+        }
+
+        public void Workinghours()
+        {
+            string result = $" {Name} restaurant works from {OpeningHours} to {ClosingHours}";
+            Console.WriteLine(result);
+        }
+    }
+}
+------------------------------------------
+
+namespace AllClasses
+{
+    public class School
+    {
+        public int NumberOfSchool { get; set; }
+        
+        public string Name { get; set; }
+        
+        public string State { get; set; }
+        
+        public string Private { get; set; }
+        
+        public string Adress { get; set; }
+
+        public string Phone { get; set; }
+        
+        public int ElementaryClasses { get; set; }
+
+        public int MiddleClasses { get; set; }
+
+        public int HighClasses { get; set; }
+
+        public int PupilsOfHighClass {  get; set; }
+
+        public int PupilsOfElementaryClass{ get; set; }
+
+        public int PupilsOfMiddleClass { get; set; }
+
+        public int Teachers { get; set; }
+
+
+        public void AllClasses()
+        {
+            var OneResult = ElementaryClasses + MiddleClasses + HighClasses;
+            var TwoResult = PupilsOfHighClass + PupilsOfElementaryClass + PupilsOfMiddleClass;
+            Console.WriteLine();
+            Console.WriteLine($" {NumberOfSchool} maktabda umumiy {OneResult} sinf bor");
+            Console.WriteLine($" {TwoResult} o`quvchi o`qiydi");
+        }
+    }
+}
+--------------------------------------------------
+namespace AllClasses
+{
+    public class Animal
+    {
+        public string Name { get; set; }
+
+        public string Clas { get; set; }
+
+        public double Weight { get; set; }
+
+        public double Length { get; set; }
+
+        public int Speed { get; set; }
+
+        public string Color { get; set; }
+
+        public string Food { get; set; }
+
+        public string Location { get; set; }
+
+        public int Lifespan { get; set; }
+
+        public string Family { get; set; }
+
+
+        public void DisplayInfoAnimal()
+        {
+            string result = $" Name : {Name}, Clas : {Clas}, Weight : {Weight}, Lenght : {Length}, " +
+                $"Color : {Color}, Food : {Food}, Location : {Location}, " +
+                $"Lifespan : {Lifespan}, Family : {Family}";
+            Console.WriteLine(result);
+        }
+    }
+}
+------------------------------------------------
+
+namespace AllClasses
+{
+    public class Book
+    {
+        public string Title { get; set; }
+
+        public string Author { get; set; }
+
+        public int Pages { get; set; }
+
+        public int Chapter { get; set; }
+
+        public int PublishingYear { get; set; }
+
+        public string Language { get; set; }
+
+        public string BookGenre { get; set; }
+
+
+        public void DisplayInfo()
+        {
+            string result = $" Title : {Title}, Author : {Author}, Pages : {Pages}, Chapter : {Chapter}, " +
+                $"PublishingYear : {PublishingYear}, Language : {Language}, BookGenre : {BookGenre} ";
+        Console.WriteLine(result);
+        }
+    }
+}
+------------------------------------------------
+namespace AllClasses
+{
+    public class Phone
+    {
+        public string Name { get; set; }
+        public string Model { get; set; }
+
+        public string Color { get; set; }
+
+        public int Price { get; set; }
+
+        public int Storage { get; set; }
+
+        public int OperatingSystem { get; set; }
+
+        public string MadeIn { get; set; }
+
+        public string Connection { get; set; }
+
+        public void DisplayInfo()
+        {
+            string result = $" Name : {Name}, Model : {Model}, Color : {Color}, " +
+                $"Price : {Price}, Storage : {Storage}, OperatingSystem : {OperatingSystem}, " +
+                $"MadeIn : {MadeIn}, Connection : {Connection} ";
+            Console.WriteLine(result);
+        }
+    }
+}
+-----------------------------------------------------
+namespace AllClasses
+{
+    public class House
+    {
+        public string Type { get; set; }
+
+        public string Adress { get; set; }
+
+        public int Price { get; set; }
+
+        public double Area { get; set; }
+
+        public int Floor { get; set; }
+
+        public int Rooms {get; set; }
+
+        public string Status { get; set; }
+
+        
+        public void DisplayInfo()
+        {
+            string result = $" Type : {Type}, Adress : {Adress}, Price : {Price}, Area : {Area}, " +
+                $"Floor : {Floor}, Rooms : {Rooms}, Status : {Status}";
+            Console.WriteLine(result);
+        }
+    }
+}
+-----------------------------------------------
+using System.Diagnostics;
+using System.Drawing;
+
+namespace AllClasses
+{
+    public class Movie
+    {
+        public string Title { get; set; }
+        public string Genre { get; set; }
+        public string Language { get; set; }
+        public string Director { get; set; }
+        public int YearOfRelease { get; set; }
+        public double Reyting { get; set; }
+        public string Country { get; set; }
+        public void DisplayInfo()
+        {
+            string result = $" Title : {Title}, Genre : {Genre}, " +
+                $"Language : {Language}, Director : {Director}, " +
+                $"YearOfRelease : {YearOfRelease}, Reyting : {Reyting}, Country : {Country}";
+            Console.WriteLine(result);
+        }
+    }
+}
+
+
+

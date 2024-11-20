@@ -1,0 +1,244 @@
+namespace AllClasses
+{
+    internal class Program
+    {
+        static void Main(string[] texts)
+        {
+
+            List<Restaurant> restaurants = new List<Restaurant>();
+
+            Restaurant firstrestaurant = new Restaurant();
+            firstrestaurant.Name = "Socials";
+            firstrestaurant.Adress = "Shevchenko 36A";
+            firstrestaurant.Reyting = 9;
+            firstrestaurant.Internetpages = "https://www.instagram.com/socials_uz/";
+            firstrestaurant.OpeningHours = "8.00";
+            firstrestaurant.ClosingHours = "23.00";
+            firstrestaurant.Phone = "+998901234567";
+            firstrestaurant.Linktr = "testc.me/socials";
+
+            Restaurant secondrestaurant = new Restaurant()
+            {
+                Name = "Sirovarnya",
+                Adress = "Shahrisabz street 31b",
+                Reyting = 9.8,
+                Internetpages = "https://www.instagram.com/syrovarnya_tashkent/",
+                OpeningHours = "9.00",
+                ClosingHours = "00.00",
+                Phone = "+998901235467",
+                Linktr = "t.me/familygardengroup"
+            };
+
+            firstrestaurant.DisplayInfo();
+            secondrestaurant.DisplayInfo();
+            Console.WriteLine();
+            firstrestaurant.Workinghours();
+            secondrestaurant.Workinghours();
+
+
+            List<School> schools = new List<School>();
+
+            School firstschool = new School();
+            firstschool.NumberOfSchool = 258;
+            firstschool.Name = "Cholpon";
+            firstschool.Adress = "Yunusobod";
+            firstschool.ElementaryClasses = 13;
+            firstschool.HighClasses = 25;
+            firstschool.MiddleClasses = 31;
+            firstschool.PupilsOfElementaryClass = 128;
+            firstschool.PupilsOfMiddleClass = 235;
+            firstschool.PupilsOfHighClass = 201;
+
+            School secondschool = new School()
+            {
+                NumberOfSchool = 173,
+                Name = "Alisher Navoiy",
+                Adress = "Olmazor street, 23",
+                ElementaryClasses = 9,
+                HighClasses = 14,
+                MiddleClasses = 21,
+                PupilsOfHighClass = 198,
+                PupilsOfMiddleClass = 222,
+                PupilsOfElementaryClass = 181
+            };
+
+            School thirdschool = new School();
+            thirdschool.NumberOfSchool = 300;
+            thirdschool.Name = "Beruniy";
+            thirdschool.Adress = "Sergeli district, 6";
+            thirdschool.ElementaryClasses = 21;
+            thirdschool.HighClasses = 23;
+            thirdschool.MiddleClasses = 29;
+            thirdschool.PupilsOfHighClass = 300;
+            thirdschool.PupilsOfElementaryClass = 245;
+            thirdschool.PupilsOfMiddleClass = 323;
+
+            firstschool.AllClasses();
+            secondschool.AllClasses();
+            thirdschool.AllClasses();
+            Console.WriteLine();
+
+
+            List<Animal> animals = new List<Animal>();
+
+            Animal firstanimal = new Animal();
+            firstanimal.Name = "Elephant";
+            firstanimal.Weight = 5000;
+            firstanimal.Length = 336;
+            firstanimal.Color = "Grey";
+            firstanimal.Lifespan = 60;
+            firstanimal.Food = "a range of plants";
+            firstanimal.Location = "Africa, Asia";
+            firstanimal.Speed = 40;
+            firstanimal.Clas = "Mammals";
+            firstanimal.Family = "Elephant";
+
+            Animal secondanimal = new Animal()
+            {
+                Name = "Lion",
+                Weight = 150,
+                Length = 80,
+                Color = "Yellow",
+                Lifespan = 15,
+                Food = "Meat",
+                Location = "Africa, India",
+                Speed = 70,
+                Clas = "Mammals",
+                Family = "Cats"
+            };
+
+            Animal thirdanimal = new Animal()
+            {
+                Name = "Zebra",
+                Weight =  320,
+                Length = 2.2,
+                Color = "Black and white",
+                Lifespan = 30,
+                Food = "Grass",
+                Location = "Africa",
+                Speed = 65,
+                Clas = "Mammals",
+                Family = "Horse"
+            };
+
+            firstanimal.DisplayInfoAnimal();
+            secondanimal.DisplayInfoAnimal();
+            thirdanimal.DisplayInfoAnimal();
+            Console.WriteLine();
+
+            List<Book> books = new List<Book>();
+
+            Book firstbook = new Book();
+            firstbook.Title = "Utgan kunlar";
+            firstbook.Author = "Abdulla Qodiriy";
+            firstbook.PublishingYear = 1925;
+            firstbook.BookGenre = "Novel";
+            firstbook.Chapter = 1;
+            firstbook.Pages = 220;
+            firstbook.Language = "Uzbek";
+
+            Book secondbook = new Book()
+            {
+                Title = "Harry Potter",
+                Author = "J.K.Rowling",
+                PublishingYear = 2007,
+                BookGenre = "Fantasy",
+                Chapter = 7,
+                Pages = 4000,
+                Language = "English"
+
+            };
+
+            firstbook.DisplayInfo();
+            secondbook.DisplayInfo();
+            Console.WriteLine();
+
+
+            List<Phone> phones = new List<Phone>();
+
+            Phone firstphone = new Phone();
+            firstphone.Name = "Samsung";
+            firstphone.Model = "Samsung S24";
+            firstphone.Price = 1000;
+            firstphone.Storage = 256;
+            firstphone.Color = "White";
+            firstphone.Connection = "3G, 4G, 5G";
+            firstphone.OperatingSystem = 12;
+            firstphone.MadeIn = "China";
+
+            Phone secondphone = new Phone()
+            {
+                Name = "Iphone",
+                Model = "Iphone 15 pro max",
+                Price = 1100,
+                Storage = 128,
+                Color = "Purple",
+                Connection = "3G, 4G, 5G",
+                OperatingSystem = 4,
+                MadeIn = "USA"
+
+            };
+
+            firstphone.DisplayInfo();
+            secondphone.DisplayInfo();
+            Console.WriteLine();
+
+
+            List<House> houses = new List<House>();
+
+            House firsthouse = new House();
+            firsthouse.Type = "Chastniy dom";
+            firsthouse.Adress = "Sergele, Olchazor street, 26";
+            firsthouse.Status = "Evroremont";
+            firsthouse.Area = 400;
+            firsthouse.Price = 400000;
+            firsthouse.Floor = 3;
+            firsthouse.Rooms = 8;
+
+            House secondhouse = new House()
+            {
+                Type = "7 qavatli uy",
+                Adress = "Mirzo Ulug`bek, 43",
+                Area = 98,
+                Status = "srednee",
+                Price = 110000,
+                Floor = 3,
+                Rooms = 4
+            };
+
+            firsthouse.DisplayInfo();
+            secondhouse.DisplayInfo();
+            Console.WriteLine();
+
+
+            List<Movie> movies = new List<Movie>();
+
+            Movie firstmovie = new Movie();
+            firstmovie.Title = " Gladiator";
+            firstmovie.Director = "Ridli Scot";
+            firstmovie.Reyting = 9.9;
+            firstmovie.Language = "English";
+            firstmovie.Genre = "Historical";
+            firstmovie.Country = "USA, UK";
+            firstmovie.YearOfRelease = 2000;
+
+            Movie secondmovie = new Movie()
+            {
+                Title = "Gone with the Wind",
+                Director = "Victor Fleming",
+                Reyting = 9.9,
+                Language = "English",
+                Genre = "Novel",
+                Country = "USA",
+                YearOfRelease = 1940
+            };
+
+            firstmovie.DisplayInfo();
+            secondmovie.DisplayInfo();
+            Console.WriteLine();
+
+
+        }
+    }
+
+}
